@@ -1,0 +1,2 @@
+# rutascg
+Rutas códigos genéticos  
