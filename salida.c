@@ -1,8 +1,11 @@
 #include "rutacg.h"
 
-extern void imprimeSal(void);
+extern void imprimeSal(int* pdadist);
 
 
+/**
+ * 
+ */
 void imprimeSal(double * pdadist){
     
 

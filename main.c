@@ -82,7 +82,9 @@ int liberaPuntos(void) {
     return 0;
 }
 
-
+/**
+ * 
+ */
 int generaPoblaciones(void){
 
     double adist[poblacion];
