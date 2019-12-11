@@ -4,3 +4,4 @@ project(rutacg C)
 set(CMAKE_C_STANDARD 99)
 
 add_executable(rutacg main.c rutacg.h)
+target_link_libraries(rutacg m)

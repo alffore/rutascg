@@ -11,6 +11,10 @@ stdlib.h
 -
 stdio.h
 -
+time.h
+-
+math.h
+-
 rutacg.h
 /home/alfonso/devel/rutascg/rutacg.h
 

@@ -8,6 +8,13 @@
 
 int cantP=0;
 
+struct PUNTO{
+    double x;
+    double y;
+    unsigned long id;
+};
+
+typedef struct PUNTO* PPunto;
 
 
 #endif //RUTACG_RUTACG_H
