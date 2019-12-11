@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/alfonso/clion-2019.3.1/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/98/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/alfonso/clion-2019.3.1/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/98/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/alfonso/devel/rutascg/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/alfonso/clion-2019.3.1/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/98/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/alfonso/clion-2019.3.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/98/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -123,6 +123,33 @@ rutacg/fast:
 	$(MAKE) -f CMakeFiles/rutacg.dir/build.make CMakeFiles/rutacg.dir/build
 .PHONY : rutacg/fast
 
+algoritmo.o: algoritmo.c.o
+
+.PHONY : algoritmo.o
+
+# target to build an object file
+algoritmo.c.o:
+	$(MAKE) -f CMakeFiles/rutacg.dir/build.make CMakeFiles/rutacg.dir/algoritmo.c.o
+.PHONY : algoritmo.c.o
+
+algoritmo.i: algoritmo.c.i
+
+.PHONY : algoritmo.i
+
+# target to preprocess a source file
+algoritmo.c.i:
+	$(MAKE) -f CMakeFiles/rutacg.dir/build.make CMakeFiles/rutacg.dir/algoritmo.c.i
+.PHONY : algoritmo.c.i
+
+algoritmo.s: algoritmo.c.s
+
+.PHONY : algoritmo.s
+
+# target to generate assembly for a file
+algoritmo.c.s:
+	$(MAKE) -f CMakeFiles/rutacg.dir/build.make CMakeFiles/rutacg.dir/algoritmo.c.s
+.PHONY : algoritmo.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -150,6 +177,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/rutacg.dir/build.make CMakeFiles/rutacg.dir/main.c.s
 .PHONY : main.c.s
 
+salida.o: salida.c.o
+
+.PHONY : salida.o
+
+# target to build an object file
+salida.c.o:
+	$(MAKE) -f CMakeFiles/rutacg.dir/build.make CMakeFiles/rutacg.dir/salida.c.o
+.PHONY : salida.c.o
+
+salida.i: salida.c.i
+
+.PHONY : salida.i
+
+# target to preprocess a source file
+salida.c.i:
+	$(MAKE) -f CMakeFiles/rutacg.dir/build.make CMakeFiles/rutacg.dir/salida.c.i
+.PHONY : salida.c.i
+
+salida.s: salida.c.s
+
+.PHONY : salida.s
+
+# target to generate assembly for a file
+salida.c.s:
+	$(MAKE) -f CMakeFiles/rutacg.dir/build.make CMakeFiles/rutacg.dir/salida.c.s
+.PHONY : salida.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... rutacg"
 	@echo "... edit_cache"
+	@echo "... algoritmo.o"
+	@echo "... algoritmo.i"
+	@echo "... algoritmo.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... salida.o"
+	@echo "... salida.i"
+	@echo "... salida.s"
 .PHONY : help
 
 

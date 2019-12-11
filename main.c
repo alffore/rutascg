@@ -15,15 +15,26 @@
 
 int generadorPuntos(void);
 int liberaPuntos(void);
+int generaPoblaciones(void);
 
-extern unsigned long dimension = 5; //cantidad de Puntos
+
+extern int translocacion_1a1(int *ori, int *des);
+extern int corrimiento_D2I(int *ori, int *des);
+extern int corrimiento_I2D(int *ori, int *des);
+extern int translocacion(int *ori, int *des);
+extern int inversion3(int *ori, int *des);
+extern double calculaDistancias(PPunto pp);
+extern void imprimeSal(double* pdadist);
+
+
+unsigned long dimension; //cantidad de Puntos
 double tamXY = 500;
 
-extern unsigned long poblacion = 10; //cantidad de ejemplos
+unsigned long poblacion; //cantidad de ejemplos
 unsigned int ciclos = 10; //cantidad de iteraciones
 
-extern int *aPob=NULL; //areglo en memoria para la poblaciones
-extern PPunto aPuntos; //arreglo de puntos (coordenadas e id)
+int *aPob; //areglo en memoria para la poblaciones
+PPunto aPuntos; //arreglo de puntos (coordenadas e id)
 
 /**
  *
@@ -33,13 +44,18 @@ extern PPunto aPuntos; //arreglo de puntos (coordenadas e id)
  */
 int main(int cargs, char **args) {
 
+    dimension = 5;
+    poblacion = 120;
+
+    aPob=NULL;
+
     srand(time(NULL));   // Initialization, should only be called once.
 
 
     generadorPuntos();
 
    
-
+    generaPoblaciones();
 
 
 
@@ -101,6 +117,7 @@ int generaPoblaciones(void){
         }
     }
 
+    imprimeSal(adist);
     free(aPob);
 }
 

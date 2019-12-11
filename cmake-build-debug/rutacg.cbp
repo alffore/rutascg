@@ -74,10 +74,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/alfonso/devel/rutascg/algoritmo.c">
+			<Option target="rutacg"/>
+		</Unit>
 		<Unit filename="/home/alfonso/devel/rutascg/main.c">
 			<Option target="rutacg"/>
 		</Unit>
 		<Unit filename="/home/alfonso/devel/rutascg/rutacg.h">
+			<Option target="rutacg"/>
+		</Unit>
+		<Unit filename="/home/alfonso/devel/rutascg/salida.c">
 			<Option target="rutacg"/>
 		</Unit>
 		<Unit filename="/home/alfonso/devel/rutascg/CMakeLists.txt">

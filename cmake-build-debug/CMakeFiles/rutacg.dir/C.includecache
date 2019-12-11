@@ -7,6 +7,10 @@
 #IncludeRegexTransform: 
 
 /home/alfonso/devel/rutascg/main.c
+rutacg.h
+/home/alfonso/devel/rutascg/rutacg.h
+
+/home/alfonso/devel/rutascg/rutacg.h
 stdlib.h
 -
 stdio.h
@@ -15,8 +19,4 @@ time.h
 -
 math.h
 -
-rutacg.h
-/home/alfonso/devel/rutascg/rutacg.h
-
-/home/alfonso/devel/rutascg/rutacg.h
 

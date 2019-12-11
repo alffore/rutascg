@@ -1,13 +1,14 @@
 #include "rutacg.h"
 
-extern int translocacion_1a1(int *ori, int *des);
-extern int corrimiento_D2I(int *ori, int *des);
-extern int corrimiento_I2D(int *ori, int *des);
-extern int translocacion(int *ori, int *des);
-extern int inversion3(int *ori, int *des);
-extern double calculaDistancias(PPunto pp);
+int translocacion_1a1(int *ori, int *des);
+int corrimiento_D2I(int *ori, int *des);
+int corrimiento_I2D(int *ori, int *des);
+int translocacion(int *ori, int *des);
+int inversion3(int *ori, int *des);
+double calculaDistancias(PPunto pp);
 
-
+extern unsigned long poblacion;
+extern unsigned long dimension;
 
 /**
  * 

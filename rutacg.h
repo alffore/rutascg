@@ -11,8 +11,6 @@
 #ifndef RUTACG_RUTACG_H
 #define RUTACG_RUTACG_H
 
-
-
 struct PUNTO{
     double x;
     double y;

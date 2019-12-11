@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/rutacg.dir/algoritmo.c.o"
   "CMakeFiles/rutacg.dir/main.c.o"
+  "CMakeFiles/rutacg.dir/salida.c.o"
   "rutacg"
   "rutacg.pdb"
 )

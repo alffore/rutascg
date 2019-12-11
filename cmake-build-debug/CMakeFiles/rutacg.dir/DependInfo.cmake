@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/alfonso/devel/rutascg/algoritmo.c" "/home/alfonso/devel/rutascg/cmake-build-debug/CMakeFiles/rutacg.dir/algoritmo.c.o"
   "/home/alfonso/devel/rutascg/main.c" "/home/alfonso/devel/rutascg/cmake-build-debug/CMakeFiles/rutacg.dir/main.c.o"
+  "/home/alfonso/devel/rutascg/salida.c" "/home/alfonso/devel/rutascg/cmake-build-debug/CMakeFiles/rutacg.dir/salida.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
