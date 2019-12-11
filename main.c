@@ -38,8 +38,10 @@ unsigned long dimension = 5; //cantidad de Puntos
 double tamXY = 500;
 
 unsigned long poblacion = 100; //cantidad de ejemplos
+int *aPob=NULL;
 
-PPunto aPuntos;
+
+PPunto aPuntos; //arreglo de puntos (coordenadas e id)
 
 /**
  *
@@ -53,9 +55,10 @@ int main(int cargs, char **args) {
 
 
 
+
     generadorPunto();
 
-
+   
 
 
 
@@ -81,11 +84,6 @@ int generadorPunto(void) {
         (aPuntos+i)->x =((double)rand()/(double)(RAND_MAX)) * tamXY;
         (aPuntos+i)->y=((double)rand()/(double)(RAND_MAX)) * tamXY;
         (aPuntos+i)->id = i;
-
-
-
-
-
     }
 
 
@@ -104,7 +102,9 @@ int liberaPuntos(void) {
     return 0;
 }
 
-
+/**
+ * 
+ */
 double calculaDistancias(PPunto pp) {
 
     double aux = 0.0;
