@@ -6,6 +6,7 @@ int corrimiento_I2D(int *ori, int *des);
 int translocacion(int *ori, int *des);
 int inversion3(int *ori, int *des);
 double calculaDistancias(PPunto pp);
+double calculaDistanciaG2P(int *ap);
 
 extern unsigned long poblacion;
 extern unsigned long dimension;
@@ -20,6 +21,18 @@ double calculaDistancias(PPunto pp) {
         aux += sqrt(pow((pp + i - 1)->x - (pp + i)->x, 2) + pow((pp + i - 1)->y - (pp + i)->y, 2));
     }
     return aux;
+}
+
+/**
+ *
+ * @param ap
+ * @return
+ */
+double calculaDistanciaG2P(int *ap){
+ double aux=0.0;
+ 
+
+ return aux;
 }
 
 /**

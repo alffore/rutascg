@@ -16,6 +16,7 @@
 int generadorPuntos(void);
 int liberaPuntos(void);
 int generaPoblaciones(void);
+int liberaPoblaciones(void);
 
 
 extern int translocacion_1a1(int *ori, int *des);
@@ -25,6 +26,7 @@ extern int translocacion(int *ori, int *des);
 extern int inversion3(int *ori, int *des);
 extern double calculaDistancias(PPunto pp);
 extern void imprimeSal(double* pdadist);
+extern void imprimePuntos(PPunto pp);
 
 
 unsigned long dimension; //cantidad de Puntos
@@ -33,7 +35,8 @@ double tamXY = 500;
 unsigned long poblacion; //cantidad de ejemplos
 unsigned int ciclos = 10; //cantidad de iteraciones
 
-int *aPob; //areglo en memoria para la poblaciones
+int *aPob; //arreglo en memoria para la poblaciones
+double *adist; //arreglo de distancias
 PPunto aPuntos; //arreglo de puntos (coordenadas e id)
 
 /**
@@ -53,12 +56,11 @@ int main(int cargs, char **args) {
 
 
     generadorPuntos();
-
-   
     generaPoblaciones();
 
 
 
+    liberaPoblaciones();
     liberaPuntos();
 
 
@@ -72,7 +74,6 @@ int main(int cargs, char **args) {
  */
 int generadorPuntos(void) {
 
-    double x,y;
 
     aPuntos= (PPunto) malloc(sizeof(struct PUNTO) * dimension);
 
@@ -103,7 +104,7 @@ int liberaPuntos(void) {
  */
 int generaPoblaciones(void){
 
-    double adist[poblacion];
+
 
     for(size_t i=0 ; i<poblacion ; i++){
         adist[i]=-1.0;
@@ -118,7 +119,12 @@ int generaPoblaciones(void){
     }
 
     imprimeSal(adist);
-    free(aPob);
+
+    return 0;
 }
 
 
+int liberaPoblaciones(void){
+    free(aPob);
+    return 0;
+}
