@@ -7,7 +7,7 @@ int translocacion(int *ori, int *des);
 int inversion3(int *ori, int *des);
 int insercion(int *ori, int *des);
 
-double calculaDistancias(PPunto pp);
+
 double calculaDistanciaG2P(int *ap);
 
 int generaPoblacionesMutantes(int *ejemplar);
@@ -17,27 +17,25 @@ extern unsigned long poblacion;
 extern unsigned long dimension;
 
 extern int *aPob;
+extern PPunto aPuntos;
 
 /**
- * 
- */
-double calculaDistancias(PPunto pp) {
-
-    double aux = 0.0;
-    for (size_t i = 1; i < dimension; i++) {
-        aux += sqrt(pow((pp + i - 1)->x - (pp + i)->x, 2) + pow((pp + i - 1)->y - (pp + i)->y, 2));
-    }
-    return aux;
-}
-
-/**
- *
+ * Función que calcula la distancia de acuerdo a la ordenación proporcionada
  * @param ap
  * @return
  */
 double calculaDistanciaG2P(int *ap){
  double aux=0.0;
  
+ double x0 = (aPuntos+*ap)->x;
+ double y0 = (aPuntos+*ap)->y;
+
+    for(size_t i = 1 ;i<dimension; i++){
+        aux+=sqrt(pow(x0-(aPuntos+*(ap+i))->x,2)+pow(y0-(aPuntos+*(ap+i))->y,2));
+        x0=(aPuntos+*(ap+i))->x;
+        y0=(aPuntos+*(ap+i))->y;
+    }
+
 
  return aux;
 }

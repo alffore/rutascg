@@ -31,9 +31,9 @@ double tamXY = 500;
 unsigned long poblacion; //cantidad de ejemplos
 unsigned int ciclos = 10; //cantidad de iteraciones
 
-int *aPob; //arreglo en memoria para la poblaciones
-double *adist; //arreglo de distancias
-PPunto aPuntos; //arreglo de puntos (coordenadas e id)
+int *aPob = NULL; //arreglo en memoria para la poblaciones
+double *adist = NULL; //arreglo de distancias
+PPunto aPuntos = NULL; //arreglo de puntos (coordenadas e id)
 
 /**
  *
