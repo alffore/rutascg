@@ -1,0 +1,4 @@
+Directorio de trabajo de cmake 
+
+cmake ../src/
+

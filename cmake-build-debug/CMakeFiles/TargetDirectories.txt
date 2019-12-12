@@ -1,3 +1,0 @@
-/home/alfonso/devel/rutascg/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/alfonso/devel/rutascg/cmake-build-debug/CMakeFiles/rutacg.dir
-/home/alfonso/devel/rutascg/cmake-build-debug/CMakeFiles/edit_cache.dir
