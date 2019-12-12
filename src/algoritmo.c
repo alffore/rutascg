@@ -5,11 +5,18 @@ int corrimiento_D2I(int *ori, int *des);
 int corrimiento_I2D(int *ori, int *des);
 int translocacion(int *ori, int *des);
 int inversion3(int *ori, int *des);
+int insercion(int *ori, int *des);
+
 double calculaDistancias(PPunto pp);
 double calculaDistanciaG2P(int *ap);
 
+int generaPoblacionesMutantes(int *ejemplar);
+
+
 extern unsigned long poblacion;
 extern unsigned long dimension;
+
+extern int *aPob;
 
 /**
  * 
@@ -193,6 +200,48 @@ int insercion(int *ori, int *des) {
             *(des + i + cmax - cmin) = temp_res[i];
         }
     }
+
+    return 0;
+}
+
+/**
+ *  Esta función genera las poblaciones mutantes hasta llenar el arreglo de poblacion
+ */
+int generaPoblacionesMutantes(int *ejemplar){
+    
+    int mutacion=0;
+
+    for(size_t d=0;d<dimension;d++){
+        *(aPob+d)=*(ejemplar+d);
+    }
+
+    for(size_t p=1;p<poblacion;p++){
+        
+            mutacion  = (rand() % (numMUTACIONES + 1)) +0;
+
+            switch(mutacion){
+                case 0:
+                    translocacion_1a1(ejemplar,(aPob+dimension*p));
+                    break;
+                case 1:
+                    corrimiento_D2I(ejemplar,(aPob+dimension*p));
+                    break;
+                case 2:
+                    corrimiento_I2D(ejemplar,(aPob+dimension*p));
+                    break;    
+                case 3:
+                    translocacion(ejemplar,(aPob+dimension*p));
+                    break;
+                case 4:
+                    inversion3(ejemplar,(aPob+dimension*p));
+                    break;
+                case 5:
+                    insercion(ejemplar,(aPob+dimension*p));  
+                    break;  
+            }
+        
+    }
+
 
     return 0;
 }

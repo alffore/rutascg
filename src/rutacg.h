@@ -11,10 +11,12 @@
 #ifndef RUTACG_RUTACG_H
 #define RUTACG_RUTACG_H
 
+
+static int numMUTACIONES = 5;
+
 struct PUNTO{
     double x;
     double y;
-    unsigned long id;
 };
 
 typedef struct PUNTO* PPunto;

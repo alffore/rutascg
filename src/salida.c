@@ -7,6 +7,8 @@ extern unsigned long poblacion;
 extern unsigned long dimension;
 
 extern int *aPob;
+
+
 /**
  * 
  */
@@ -21,10 +23,13 @@ void imprimeSal(double* pdadist){
 
 }
 
+/**
+ * 
+ */
 void imprimePuntos(PPunto pp){
 
     for(size_t i=0;i<dimension; i++){
-        printf("%d %lf %lf\n",(pp+i)->id,(pp+i)->x,(pp+i)->y);
+        printf("%ld %lf %lf\n",i,(pp+i)->x,(pp+i)->y);
     }
 
 }

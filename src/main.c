@@ -5,11 +5,6 @@
  * https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
  *
  */
-
-
-
-
-
 #include "rutacg.h"
 
 
@@ -17,6 +12,7 @@ int generadorPuntos(void);
 int liberaPuntos(void);
 int generaPoblaciones(void);
 int liberaPoblaciones(void);
+
 
 
 extern int translocacion_1a1(int *ori, int *des);
@@ -82,7 +78,6 @@ int generadorPuntos(void) {
     for (size_t i = 0; i < dimension; i++) {
         (aPuntos+i)->x =((double)rand()/(double)(RAND_MAX)) * tamXY;
         (aPuntos+i)->y=((double)rand()/(double)(RAND_MAX)) * tamXY;
-        (aPuntos+i)->id = i;
     }
 
 
@@ -119,13 +114,14 @@ int generaPoblaciones(void){
             *(aPob+dimension*p+d)=d;
         }
     }
-
-   
-
     return 0;
 }
 
 
+
+/**
+ * 
+ */
 int liberaPoblaciones(void){
     free(aPob);
     free(adist);
