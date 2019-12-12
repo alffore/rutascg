@@ -59,6 +59,8 @@ int main(int cargs, char **args) {
     generaPoblaciones();
 
 
+    imprimePuntos(aPuntos);
+
 
     liberaPoblaciones();
     liberaPuntos();
@@ -104,7 +106,7 @@ int liberaPuntos(void) {
  */
 int generaPoblaciones(void){
 
-
+    adist =(double *) malloc(sizeof(double)*poblacion);
 
     for(size_t i=0 ; i<poblacion ; i++){
         adist[i]=-1.0;
@@ -118,7 +120,7 @@ int generaPoblaciones(void){
         }
     }
 
-    imprimeSal(adist);
+   
 
     return 0;
 }
@@ -126,5 +128,6 @@ int generaPoblaciones(void){
 
 int liberaPoblaciones(void){
     free(aPob);
+    free(adist);
     return 0;
 }

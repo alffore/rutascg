@@ -23,4 +23,8 @@ void imprimeSal(double* pdadist){
 
 void imprimePuntos(PPunto pp){
 
+    for(size_t i=0;i<dimension; i++){
+        printf("%d %lf %lf\n",(pp+i)->id,(pp+i)->x,(pp+i)->y);
+    }
+
 }
