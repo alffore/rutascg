@@ -19,6 +19,9 @@ extern unsigned long dimension;
  */
 int generaTodos(void){
 
+    for(size_t i=0;i<dimension; i++){
+        
+    }
 
 
     return 0;
