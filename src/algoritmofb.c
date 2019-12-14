@@ -89,7 +89,7 @@ void recursivaG(int *r,int i){
 }
 
 /**
- * 
+ * Funcion que inserta una combinación de nodos  
  */
 void insert(int * r){
 

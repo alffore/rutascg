@@ -70,7 +70,7 @@ int main(int cargs, char **args) {
 }
 
 /**
- *
+ * Funcion que genera los puntos (coordenados en 2 dimensiones)
  * @param pp
  * @return
  */
@@ -95,8 +95,12 @@ int generadorPuntos(void) {
  * @return
  */
 int liberaPuntos(void) {
+    if(aPuntos==NULL){
+        return 1;
+    }
 
     free(aPuntos);
+    aPuntos=NULL;
 
     return 0;
 }
@@ -128,7 +132,13 @@ int generaPoblaciones(void){
  * 
  */
 int liberaPoblaciones(void){
-    free(aPob);
-    free(adist);
+    if(aPob!=NULL){
+        free(aPob);
+        aPob=NULL;
+    }
+    if(adist!=NULL){
+        free(adist);
+        adist=NULL;
+    }
     return 0;
 }
