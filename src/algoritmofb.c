@@ -20,7 +20,7 @@ extern unsigned long dimension;
 
 int *aPobFB=NULL;
 int cantidad=0;
-int index=0;
+int index_fb=0;
 
 
 
@@ -33,6 +33,8 @@ int generaTodos(void){
     int c_min=0;
 
     cantidad=cantidadPosiblesConv();
+
+	printf("Cantidad de casos: %d\n",cantidad);
 
     aPobFB =(int *)malloc(sizeof(int)*cantidad+dimension);
     
@@ -93,12 +95,12 @@ void insert(int * r){
 
     //printf("%d :: ",index);
     for(size_t i =0 ;i<dimension;i++){
-       *(aPobFB+dimension*index+i)=*(r+i);
+       *(aPobFB+dimension*index_fb+i)=*(r+i);
        //printf("%d ",*(r+i));
     }
     //printf("\n");
 
-    index++;
+    index_fb++;
 }
 
 
