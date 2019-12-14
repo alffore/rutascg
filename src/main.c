@@ -82,6 +82,7 @@ int generadorPuntos(void) {
     for (size_t i = 0; i < dimension; i++) {
         (aPuntos+i)->x =((double)rand()/(double)(RAND_MAX)) * tamXY;
         (aPuntos+i)->y=((double)rand()/(double)(RAND_MAX)) * tamXY;
+        (aPuntos+i)->id=i;
     }
 
 
