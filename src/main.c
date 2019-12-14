@@ -23,6 +23,7 @@ extern int inversion3(int *ori, int *des);
 extern double calculaDistancias(PPunto pp);
 extern void imprimeSal(double* pdadist);
 extern void imprimePuntos(PPunto pp);
+extern int generaTodos(void);
 
 
 unsigned long dimension; //cantidad de Puntos
@@ -52,15 +53,18 @@ int main(int cargs, char **args) {
 
 
     generadorPuntos();
-    generaPoblaciones();
+   /* generaPoblaciones();
 
 
     imprimePuntos(aPuntos);
 
 
-    liberaPoblaciones();
-    liberaPuntos();
+    liberaPoblaciones(); */
+    
 
+    generaTodos();
+
+    liberaPuntos();
 
     return 0;
 }

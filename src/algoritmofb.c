@@ -13,30 +13,47 @@ unsigned long cantidadPosiblesConv(void);
 void recursivaG(int *r,int i);
 void insert(int * r);
 
+extern double calculaDistanciaG2P(int *ap);
+extern void imprimePuntos(PPunto pp);
+
 extern unsigned long dimension;
 
 int *aPobFB=NULL;
 int cantidad=0;
 int index=0;
 
+
+
 /**
  * 
  */
 int generaTodos(void){
+    double aux=0;
+    double aux_min=pow(2, 64)-1;
+    int c_min=0;
 
     cantidad=cantidadPosiblesConv();
 
     aPobFB =(int *)malloc(sizeof(int)*cantidad+dimension);
-
     
-
+    //genera todas las posibles combinaciones
     for(size_t i=0;i<dimension; i++){
         int r[dimension];
         r[0]=i;
         recursivaG(r,1);
     }
 
+    //busca la minima distancia dado las coordenadas de los Puntos
+    for(int c =0 ;c<cantidad;c++ ){
+        aux=calculaDistanciaG2P(aPobFB+c);
+        if(aux_min>aux){
+            aux_min=aux;
+            c_min=c;
+        }
+    }
 
+    printf("Distancia mínima: %lf %d\n",aux_min,c_min);
+    imprimePuntos(aPobFB+c_min);
 
     free(aPobFB);
     return 0;
@@ -74,12 +91,12 @@ void recursivaG(int *r,int i){
  */
 void insert(int * r){
 
-    printf("%d :: ",index);
+    //printf("%d :: ",index);
     for(size_t i =0 ;i<dimension;i++){
-       // *(aPobFB+dimension*index+i)=*(r+i);
-       printf("%d ",*(r+i));
+       *(aPobFB+dimension*index+i)=*(r+i);
+       //printf("%d ",*(r+i));
     }
-    printf("\n");
+    //printf("\n");
 
     index++;
 }
