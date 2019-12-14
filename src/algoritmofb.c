@@ -34,6 +34,8 @@ int generaTodos(void){
 
     cantidad=cantidadPosiblesConv();
 
+	printf("Cantidad de casos: %d\n",cantidad);
+
     aPobFB =(int *)malloc(sizeof(int)*cantidad+dimension);
     
     //genera todas las posibles combinaciones
@@ -93,7 +95,7 @@ void insert(int * r){
 
     //printf("%d :: ",index);
     for(size_t i =0 ;i<dimension;i++){
-       *(aPobFB+dimension*index+i)=*(r+i);
+       *(aPobFB+dimension*index_fb+i)=*(r+i);
        //printf("%d ",*(r+i));
     }
     //printf("\n");
