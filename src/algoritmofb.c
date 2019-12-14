@@ -20,7 +20,7 @@ extern unsigned long dimension;
 
 int *aPobFB=NULL;
 int cantidad=0;
-int index=0;
+int index_fb=0;
 
 
 
@@ -98,7 +98,7 @@ void insert(int * r){
     }
     //printf("\n");
 
-    index++;
+    index_fb++;
 }
 
 
