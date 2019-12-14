@@ -14,7 +14,7 @@ void recursivaG(int *r,int i);
 void insert(int * r);
 
 extern double calculaDistanciaG2P(int *ap);
-extern void imprimePuntos(PPunto pp);
+extern void imprimePuntovI(int j);
 
 extern unsigned long dimension;
 
@@ -53,7 +53,7 @@ int generaTodos(void){
     }
 
     printf("Distancia mínima: %lf %d\n",aux_min,c_min);
-    imprimePuntos(aPobFB+c_min);
+    imprimePuntovI(c_min);
 
     free(aPobFB);
     return 0;

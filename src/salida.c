@@ -2,12 +2,13 @@
 
 void imprimeSal(double* pdadist);
 void imprimePuntos(PPunto pp);
+void imprimePuntovI(int j);
 
 extern unsigned long poblacion;
 extern unsigned long dimension;
 
 extern int *aPob;
-
+extern PPunto aPuntos;
 
 /**
  * 
@@ -32,4 +33,15 @@ void imprimePuntos(PPunto pp){
         printf("%ld %lf %lf\n",i,(pp+i)->x,(pp+i)->y);
     }
 
+}
+
+/**
+ * Función que imprime un punto de acuerdo al indice
+ * 
+ */
+void imprimePuntovI(int j){
+    PPunto pp=(aPuntos+j*dimension);
+    for(size_t i=0;i<dimension; i++){
+        printf("%ld %lf %lf\n",i,(pp+i)->x,(pp+i)->y);
+    }
 }
