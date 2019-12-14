@@ -44,7 +44,7 @@ PPunto aPuntos = NULL; //arreglo de puntos (coordenadas e id)
  */
 int main(int cargs, char **args) {
 
-    dimension = 5;
+    dimension = 6;
     poblacion = 120;
 
     aPob=NULL;

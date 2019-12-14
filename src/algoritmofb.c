@@ -55,7 +55,7 @@ int generaTodos(void){
     }
 
     printf("Distancia mínima: %lf  indice_ min: %d\n",aux_min,c_min);
-    imprimeSecuenciaPuntos(aPobFB+c_min);
+    imprimeSecuenciaPuntos(aPobFB+c_min*dimension);
 
     free(aPobFB);
     return 0;
