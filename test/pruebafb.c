@@ -1,5 +1,5 @@
 
-#include "../rutacg.h"
+#include "../src/rutacg.h"
 
 
 extern int generaTodos(void);
