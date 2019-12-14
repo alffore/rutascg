@@ -10,12 +10,13 @@
 
 int generaTodos(void);
 unsigned long cantidadPosiblesConv(void);
-void recursivaG(size_t index);
+void recursivaG(int *r,int i);
 
 extern unsigned long dimension;
 
 int *aPobFB=NULL;
 int cantidad=0;
+int index=0;
 
 /**
  * 
@@ -24,12 +25,14 @@ int generaTodos(void){
 
     cantidad=cantidadPosiblesConv();
 
-    aPobFB =(int *)malloc(sizeof(int)*cantidad);
+    aPobFB =(int *)malloc(sizeof(int)*cantidad+dimension);
 
     
 
     for(size_t i=0;i<dimension; i++){
-        recursivaG(i);
+        int r[dimension];
+        r[0]=i;
+        recursivaG(r,1);
     }
 
 
@@ -38,15 +41,46 @@ int generaTodos(void){
     return 0;
 }
 
+/**
+ * 
+ */
+void recursivaG(int *r,int i){
 
-void recursivaG(size_t index){
-    for(size_t i=0; i<dimension; i++){
-        for(size_t j=0; j<=index; j++){
-           
+    if(i==dimension){
+        insert(r);
+        return;
+    }
+
+    int busado = 0;
+    for(size_t k=0;k<dimension;k++){
+        for(size_t j=0;j<i;j++){
+        
+            if(*(r+j)==k){
+                busado=1;
+            }
         }
+        if(busado==0){
+            *(r+i)=k;
+            recursivaG(r,i+1);
+        }
+        busado=0;
+    }
+
+}
+
+/**
+ * 
+ */
+void insert(int * r){
+
+    printf("%d :: ",index);
+    for(size_t i =0 ;i<dimension;i++){
+       // *(aPobFB+dimension*index+i)=*(r+i);
+       printf("%d ",*(r+i));
     }
     printf("\n");
 
+    index++;
 }
 
 
