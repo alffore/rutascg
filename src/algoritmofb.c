@@ -93,12 +93,12 @@ void recursivaG(int *r,int i){
  */
 void insert(int * r){
 
-    //printf("%d :: ",index);
+    printf("%d :: ",index);
     for(size_t i =0 ;i<dimension;i++){
        *(aPobFB+dimension*index_fb+i)=*(r+i);
-       //printf("%d ",*(r+i));
+       printf("%d ",*(r+i));
     }
-    //printf("\n");
+    printf("\n");
 
     index_fb++;
 }
