@@ -11,6 +11,7 @@
 int generaTodos(void);
 unsigned long cantidadPosiblesConv(void);
 void recursivaG(int *r,int i);
+void insert(int * r);
 
 extern unsigned long dimension;
 

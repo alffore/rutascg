@@ -5,7 +5,7 @@
 extern int generaTodos(void);
 
 
-unsigned long dimension=3;
+unsigned long dimension=4;
 /**
  *
  * @param cargs
@@ -13,6 +13,10 @@ unsigned long dimension=3;
  * @return
  */
 int main(int cargs, char **args) {
+
+    if(cargs>=2){
+        dimension=atol(*(args+1));
+    }
 
     generaTodos();
 
