@@ -49,7 +49,7 @@ void imprimePuntovI(int j){
 
 void imprimeSecuenciaPuntos(int *pp){
 
-    for(size_t i = 1 ;i<dimension; i++){
+    for(size_t i = 0 ;i<dimension; i++){
         printf("%d ",*(pp+i));
     }
     printf("\n");
