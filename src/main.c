@@ -44,13 +44,13 @@ PPunto aPuntos = NULL; //arreglo de puntos (coordenadas e id)
  */
 int main(int cargs, char **args) {
 
+    dimension=5;
+
     if(cargs>=2){
         dimension=atol(*(args+1));
     }
     
     poblacion = 120;
-
-    aPob=NULL;
 
     srand(time(NULL));   // Initialization, should only be called once.
 
@@ -129,7 +129,6 @@ int generaPoblaciones(void){
     }
     return 0;
 }
-
 
 
 /**
