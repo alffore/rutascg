@@ -8,7 +8,7 @@
 #include "rutacg.h"
 
 
-int generaTodos(void);
+int generaTodosFB(void);
 unsigned long cantidadPosiblesConv(void);
 void recursivaG(int *r,int i);
 void insert(int * r);
@@ -27,7 +27,7 @@ int index_fb=0;
 /**
  * 
  */
-int generaTodos(void){
+int generaTodosFB(void){
     double aux=0;
     double aux_min=pow(2, 64)-1;
     int c_min=0;

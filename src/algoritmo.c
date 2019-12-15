@@ -169,9 +169,10 @@ int insercion(int *ori, int *des) {
     int cmin = (c1 <= c2) ? c1 : c2;
     int cmax = (c1 > c2) ? c1 : c2;
 
-    int temp[cmax - cmin + 1];
+    int dim_corte=cmax - cmin + 1;
+    int temp[dim_corte];
 
-    int dimres = dimension - cmax + cmin - 1;
+    int dimres = dimension - dim_corte;
 
     int temp_res[dimres];
     int k = 0;
@@ -193,7 +194,9 @@ int insercion(int *ori, int *des) {
         if (i < c3) {
             *(des + i) = temp_res[i];
         } else if (i == c3) {
-
+            for(int k=0;k<dim_corte;k++){
+                *(des+i+k)=temp[k];
+            }
         } else {
             *(des + i + cmax - cmin) = temp_res[i];
         }
@@ -203,7 +206,8 @@ int insercion(int *ori, int *des) {
 }
 
 /**
- *  Esta función genera las poblaciones mutantes hasta llenar el arreglo de poblacion
+ *  Esta función genera las poblaciones mutantes hasta llenar el arreglo 
+ *  de poblacion
  */
 int generaPoblacionesMutantes(int *ejemplar){
     

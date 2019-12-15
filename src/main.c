@@ -23,10 +23,10 @@ extern int inversion3(int *ori, int *des);
 extern double calculaDistancias(PPunto pp);
 extern void imprimeSal(double* pdadist);
 extern void imprimePuntos(PPunto pp);
-extern int generaTodos(void);
+extern int generaTodosFB(void);
 
 
-unsigned long dimension; //cantidad de Puntos
+unsigned long dimension=5; //cantidad de Puntos
 double tamXY = 500;
 
 unsigned long poblacion; //cantidad de ejemplos
@@ -44,7 +44,10 @@ PPunto aPuntos = NULL; //arreglo de puntos (coordenadas e id)
  */
 int main(int cargs, char **args) {
 
-    dimension = 6;
+    if(cargs>=2){
+        dimension=atol(*(args+1));
+    }
+    
     poblacion = 120;
 
     aPob=NULL;
@@ -61,8 +64,9 @@ int main(int cargs, char **args) {
 
     liberaPoblaciones(); */
     
-
-    generaTodos();
+    if(dimension <= 8){
+        generaTodosFB();
+    }
 
     liberaPuntos();
 
