@@ -36,7 +36,7 @@ int generaTodosFB(void){
 
 	printf("Cantidad de casos: %d\n",cantidad);
 
-    aPobFB =(int *)malloc(sizeof(int)*cantidad+dimension);
+    aPobFB =(int *)malloc(sizeof(int)*cantidad*dimension);
     
     //genera todas las posibles combinaciones
     for(size_t i=0;i<dimension; i++){
