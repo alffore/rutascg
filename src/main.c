@@ -16,17 +16,18 @@ int liberaPoblaciones(void);
 
 
 
-extern int translocacion_1a1(int *ori, int *des);
+/* extern int translocacion_1a1(int *ori, int *des);
 extern int corrimiento_D2I(int *ori, int *des);
 extern int corrimiento_I2D(int *ori, int *des);
 extern int translocacion(int *ori, int *des);
-extern int inversion3(int *ori, int *des);
+extern int inversion3(int *ori, int *des);*/
 extern double calculaDistancias(PPunto pp);
 extern void imprimeSal(double* pdadist);
 extern void imprimePuntos(PPunto pp);
 extern int generaTodosFB(void);
 extern int generaPoblacionesMutantes(int *ejemplar);
 extern void imprimeSecuenciaPuntos(int *pp);
+extern void rutinaPrincipal(void);
 
 
 unsigned long dimension=5; //cantidad de Puntos
@@ -62,6 +63,7 @@ int main(int cargs, char **args) {
     generaPoblacionesv2();
 
 
+    rutinaPrincipal();
     
 
 

@@ -7,6 +7,7 @@ int translocacion(int *ori, int *des);
 int inversion3(int *ori, int *des);
 int insercion(int *ori, int *des);
 
+void rutinaPrincipal(void);
 
 double calculaDistanciaG2P(int *ap);
 
@@ -15,6 +16,7 @@ int generaPoblacionesMutantes(int *ejemplar);
 
 extern unsigned long poblacion;
 extern unsigned long dimension;
+extern unsigned int ciclos;
 
 extern int *aPob;
 extern PPunto aPuntos;
@@ -246,4 +248,35 @@ int generaPoblacionesMutantes(int *ejemplar){
 
 
     return 0;
+}
+
+
+void rutinaPrincipal(void){
+
+    int pmin;
+    double dmin,daux;
+
+    for(int c=0;c<ciclos;c++){
+        dmin=calculaDistanciaG2P(aPob);
+        pmin=0;
+
+        for(size_t p=1;p<poblacion;p++){
+
+            daux=calculaDistanciaG2P(aPob+dimension*p);
+            if(daux<dmin){
+                pmin=p;
+                dmin=daux;
+            }
+
+        }
+
+        generaPoblacionesMutantes(aPob+dimension*pmin);        
+        
+        
+    }
+
+    printf("Secuencia minima con %ld ciclos: \n",ciclos);
+        imprimeSecuenciaPuntos(aPob);
+    
+
 }
