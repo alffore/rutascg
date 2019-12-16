@@ -58,7 +58,7 @@ int main(int cargs, char **args) {
 
 
     generadorPuntos();
-    generaPoblaciones();
+    generaPoblacionesv2();
 
 
    
