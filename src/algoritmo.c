@@ -272,11 +272,15 @@ void rutinaPrincipal(void){
 
         generaPoblacionesMutantes(aPob+dimension*pmin);        
         
+        printf(" CICLO: %d\n",c);
+        for(size_t p=0;p<poblacion;p++){
+            imprimeSecuenciaPuntos(aPob+dimension*p);
+        }
         
     }
 
-    printf("Secuencia minima con %ld ciclos: \n",ciclos);
-        imprimeSecuenciaPuntos(aPob);
+    /*printf("Secuencia minima con %ld ciclos: \n",ciclos);
+        imprimeSecuenciaPuntos(aPob);*/
     
 
 }
