@@ -24,6 +24,8 @@ extern double calculaDistancias(PPunto pp);
 extern void imprimeSal(double* pdadist);
 extern void imprimePuntos(PPunto pp);
 extern int generaTodosFB(void);
+extern int generaPoblacionesMutantes(int *ejemplar);
+extern void imprimeSecuenciaPuntos(int *pp);
 
 
 unsigned long dimension=5; //cantidad de Puntos
@@ -56,13 +58,13 @@ int main(int cargs, char **args) {
 
 
     generadorPuntos();
-   /* generaPoblaciones();
+    generaPoblaciones();
 
 
-    imprimePuntos(aPuntos);
+   
 
 
-    liberaPoblaciones(); */
+    liberaPoblaciones(); 
     
     if(dimension <= 8){
         generaTodosFB();
@@ -110,7 +112,7 @@ int liberaPuntos(void) {
 }
 
 /**
- * 
+ * Genera una poblacion de unica especie
  */
 int generaPoblaciones(void){
 
@@ -127,9 +129,39 @@ int generaPoblaciones(void){
             *(aPob+dimension*p+d)=d;
         }
     }
+
+    for(size_t p=0;p<poblacion;p++){
+        imprimeSecuenciaPuntos(aPob+dimension*p);
+    }
+
     return 0;
 }
 
+/**
+ * Función que genera Poblaciones mutantes para iniciar el calculo 
+ * 
+ */
+int generaPoblacionesv2(void){
+    adist =(double *) malloc(sizeof(double)*poblacion);
+
+    for(size_t i=0 ; i<poblacion ; i++){
+        adist[i]=-1.0;
+    }
+
+    aPob = (int *)malloc(sizeof(int)*poblacion*dimension);
+
+    for(size_t d=0;d<dimension;d++){
+            *(aPob+d)=d;
+    }
+
+    generaPoblacionesMutantes(aPob);
+
+    for(size_t p=0;p<poblacion;p++){
+        imprimeSecuenciaPuntos(aPob+dimension*p);
+    }
+
+    return 0;
+}
 
 /**
  * 
