@@ -11,6 +11,7 @@
 int generadorPuntos(void);
 int liberaPuntos(void);
 int generaPoblaciones(void);
+int generaPoblacionesv2(void);
 int liberaPoblaciones(void);
 
 
@@ -61,7 +62,7 @@ int main(int cargs, char **args) {
     generaPoblaciones();
 
 
-   
+    
 
 
     liberaPoblaciones(); 
