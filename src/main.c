@@ -159,9 +159,9 @@ int generaPoblacionesv2(void){
 
     generaPoblacionesMutantes(aPob);
 
-    for(size_t p=0;p<poblacion;p++){
+   /* for(size_t p=0;p<poblacion;p++){
         imprimeSecuenciaPuntos(aPob+dimension*p);
-    }
+    }*/
 
     return 0;
 }
