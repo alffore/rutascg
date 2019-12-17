@@ -97,7 +97,7 @@ int translocacion(int *ori, int *des) {
         *(des + dimension - 1 - m + i) = *(ori + i);
     }
 
-    printf("translocacion\n");
+    printf("translocacion m:%d\n",m);
     imprimeMutacion(ori,des);
 
     return 0;
@@ -169,7 +169,7 @@ int inversion3(int *ori, int *des) {
     *(des + m - 1) = *(ori + m + 1);
     *(des + m + 1) = *(ori + m - 1);
 
-    printf("inversion3\n");
+    printf("inversion3 m:%d\n"),m;
     imprimeMutacion(ori,des);
 
     return 0;
