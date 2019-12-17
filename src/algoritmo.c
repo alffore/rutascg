@@ -49,6 +49,7 @@ double calculaDistanciaG2P(int *ap){
  * @return
  */
 int translocacion_1a1(int *ori, int *des) {
+
     int lower = 0;
     int upper = dimension - 1;
 
@@ -66,6 +67,9 @@ int translocacion_1a1(int *ori, int *des) {
             *(des + i) = *(ori + i);
         }
     }
+
+    printf("translocacion_1a1\n");
+    imprimeSecuenciaPuntos(des);
 
     return 0;
 }
@@ -90,6 +94,9 @@ int translocacion(int *ori, int *des) {
         *(des + dimension - 1 - m + i) = *(ori + i);
     }
 
+    printf("translocacion\n");
+    imprimeSecuenciaPuntos(des);
+
     return 0;
 }
 
@@ -109,6 +116,10 @@ int corrimiento_D2I(int *ori, int *des) {
     }
 
     *(des + dimension - 1) = *(ori);
+
+    printf("corrimiento_D2I\n");
+    imprimeSecuenciaPuntos(des);
+
     return 0;
 }
 
@@ -128,6 +139,10 @@ int corrimiento_I2D(int *ori, int *des) {
     }
 
     *(des) = *(ori + dim);
+
+    printf("corrimiento_I2D\n");
+    imprimeSecuenciaPuntos(des);
+
     return 0;
 }
 
@@ -150,6 +165,9 @@ int inversion3(int *ori, int *des) {
 
     *(des + m - 1) = *(ori + m + 1);
     *(des + m + 1) = *(ori + m - 1);
+
+    printf("inversion3\n");
+    imprimeSecuenciaPuntos(des);
 
     return 0;
 }
@@ -203,6 +221,9 @@ int insercion(int *ori, int *des) {
             *(des + i + cmax - cmin) = temp_res[i];
         }
     }
+
+    printf("insercion\n");
+    imprimeSecuenciaPuntos(des);
 
     return 0;
 }
@@ -270,12 +291,13 @@ void rutinaPrincipal(void){
 
         }
 
+        printf(" CICLO: %d\n",c);
         generaPoblacionesMutantes(aPob+dimension*pmin);        
         
-        printf(" CICLO: %d\n",c);
-        for(size_t p=0;p<poblacion;p++){
+        
+        /*for(size_t p=0;p<poblacion;p++){
             imprimeSecuenciaPuntos(aPob+dimension*p);
-        }
+        }*/
         
     }
 
