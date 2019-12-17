@@ -4,6 +4,7 @@ void imprimeSal(double* pdadist);
 void imprimePuntos(PPunto pp);
 void imprimePuntovI(int j);
 void imprimeSecuenciaPuntos(int *pp);
+void imprimeMutacion( int * pori, int* pdes);
 
 extern unsigned long poblacion;
 extern unsigned long dimension;
@@ -54,4 +55,15 @@ void imprimeSecuenciaPuntos(int *pp){
     }
     printf("\n");
 
+}
+
+void imprimeMutacion( int * pori, int* pdes){
+    for(size_t i = 0 ;i<dimension; i++){
+        printf("%d ",*(pori+i));
+    }
+    printf(" -> ");
+    for(size_t i = 0 ;i<dimension; i++){
+        printf("%d ",*(pdes+i));
+    }
+    printf("\n");
 }

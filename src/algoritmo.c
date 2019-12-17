@@ -14,6 +14,9 @@ double calculaDistanciaG2P(int *ap);
 int generaPoblacionesMutantes(int *ejemplar);
 
 
+extern void imprimeMutacion( int * pori, int* pdes);
+
+
 extern unsigned long poblacion;
 extern unsigned long dimension;
 extern unsigned int ciclos;
@@ -69,7 +72,7 @@ int translocacion_1a1(int *ori, int *des) {
     }
 
     printf("translocacion_1a1\n");
-    imprimeSecuenciaPuntos(des);
+    imprimeMutacion(ori,des);
 
     return 0;
 }
@@ -95,7 +98,7 @@ int translocacion(int *ori, int *des) {
     }
 
     printf("translocacion\n");
-    imprimeSecuenciaPuntos(des);
+    imprimeMutacion(ori,des);
 
     return 0;
 }
@@ -118,7 +121,7 @@ int corrimiento_D2I(int *ori, int *des) {
     *(des + dimension - 1) = *(ori);
 
     printf("corrimiento_D2I\n");
-    imprimeSecuenciaPuntos(des);
+    imprimeMutacion(ori,des);
 
     return 0;
 }
@@ -141,7 +144,7 @@ int corrimiento_I2D(int *ori, int *des) {
     *(des) = *(ori + dim);
 
     printf("corrimiento_I2D\n");
-    imprimeSecuenciaPuntos(des);
+    imprimeMutacion(ori,des);
 
     return 0;
 }
@@ -167,7 +170,7 @@ int inversion3(int *ori, int *des) {
     *(des + m + 1) = *(ori + m - 1);
 
     printf("inversion3\n");
-    imprimeSecuenciaPuntos(des);
+    imprimeMutacion(ori,des);
 
     return 0;
 }
@@ -223,7 +226,7 @@ int insercion(int *ori, int *des) {
     }
 
     printf("insercion\n");
-    imprimeSecuenciaPuntos(des);
+    imprimeMutacion(ori,des);
 
     return 0;
 }
