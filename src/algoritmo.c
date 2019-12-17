@@ -169,7 +169,7 @@ int inversion3(int *ori, int *des) {
     *(des + m - 1) = *(ori + m + 1);
     *(des + m + 1) = *(ori + m - 1);
 
-    printf("inversion3 m:%d\n"),m;
+    printf("inversion3 m:%d\n",m);
     imprimeMutacion(ori,des);
 
     return 0;
@@ -225,7 +225,7 @@ int insercion(int *ori, int *des) {
         }
     }
 
-    printf("insercion\n");
+    printf("inserción cmin: %d cmax: %d c3: %d\n",cmin,cmax,c3);
     imprimeMutacion(ori,des);
 
     return 0;
