@@ -70,7 +70,7 @@ int main(int cargs, char **args) {
     liberaPoblaciones(); 
     
     if(dimension <= 8){
-        generaTodosFB();
+        //generaTodosFB();
     }
 
     liberaPuntos();
