@@ -71,7 +71,7 @@ int translocacion_1a1(int *ori, int *des) {
         }
     }
 
-    printf("translocacion_1a1\n");
+    printf("translocacion_1a1: %d x %d\n",num1,num2);
     imprimeMutacion(ori,des);
 
     return 0;
