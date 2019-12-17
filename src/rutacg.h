@@ -12,7 +12,7 @@
 #define RUTACG_RUTACG_H
 
 
-static int numMUTACIONES = 4;
+static int numMUTACIONES = 1;
 
 struct PUNTO{
     double x;

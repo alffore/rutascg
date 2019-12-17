@@ -48,6 +48,9 @@ void imprimePuntovI(int j){
     }
 }
 
+/**
+ * 
+ */
 void imprimeSecuenciaPuntos(int *pp){
 
     for(size_t i = 0 ;i<dimension; i++){
@@ -57,6 +60,9 @@ void imprimeSecuenciaPuntos(int *pp){
 
 }
 
+/**
+ * 
+ */
 void imprimeMutacion( int * pori, int* pdes){
     for(size_t i = 0 ;i<dimension; i++){
         printf("%d ",*(pori+i));
